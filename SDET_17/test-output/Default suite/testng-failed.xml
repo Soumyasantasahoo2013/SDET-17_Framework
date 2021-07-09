@@ -3,18 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.comcast.VtigerTest.CreateOrganizationTest">
+      <class name="practice.Test.SampleTest1">
         <methods>
-          <include name="configAS"/>
-          <include name="setUp"/>
-          <include name="configAC"/>
-          <include name="tearDown"/>
-          <include name="createOrgTest"/>
-          <include name="configBS"/>
-          <include name="configBC"/>
-          <include name="createOrgWithIndustry"/>
+          <include name="connectNet"/>
         </methods>
-      </class> <!-- com.crm.comcast.VtigerTest.CreateOrganizationTest -->
+      </class> <!-- practice.Test.SampleTest1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

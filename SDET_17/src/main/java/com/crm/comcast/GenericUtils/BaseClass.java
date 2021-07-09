@@ -21,6 +21,7 @@ public class BaseClass {
 	public PropertyFileUtility pLib=new PropertyFileUtility();
 	public ExcelUtility eLib=new ExcelUtility();
 	public HomePage homePage;
+	public static WebDriver sdriver;
 	
 	@BeforeSuite(groups = {"smokeTest","regressionTest"})
 	public void configBS()
@@ -28,11 +29,11 @@ public class BaseClass {
 		System.out.println("Connect to Database");
 	}
 	
-	@Parameters("browser")
+	//@Parameters("browser")
 	@BeforeClass(groups = {"smokeTest","regressionTest"})
-	public void configBC(String browsername) throws Throwable
+	public void configBC() throws Throwable
 	{
-		//String browsername=pLib.readDataFromPropertyFile("browser");
+		String browsername=pLib.readDataFromPropertyFile("browser");
 		
 		if(browsername.equalsIgnoreCase("firefox")) {
 			driver= new FirefoxDriver();
@@ -41,6 +42,7 @@ public class BaseClass {
 		{
 			driver=new ChromeDriver();
 		}
+		sdriver=driver;
 		driver.manage().window().maximize();
 	}
 	
